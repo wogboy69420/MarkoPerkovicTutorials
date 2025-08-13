@@ -76,3 +76,44 @@ And the corresponding output `ALARM`.
 ---
 
 Would you like me to generate the full truth table for you as well? Or perhaps a diagram of the logic circuit?
+
+
+
+Here is the complete **truth table** for your seatbelt alarm logic circuit:
+
+| IGN | DRIV | BELTD | PASS | BELTP | ALARM |
+|-----|------|--------|------|--------|--------|
+| 0   | 0    | 0      | 0    | 0      | 1      |
+| 0   | 0    | 0      | 0    | 1      | 1      |
+| 0   | 0    | 0      | 1    | 0      | 1      |
+| 0   | 0    | 0      | 1    | 1      | 1      |
+| 0   | 0    | 1      | 0    | 0      | 1      |
+| 0   | 0    | 1      | 0    | 1      | 1      |
+| 0   | 0    | 1      | 1    | 0      | 1      |
+| 0   | 0    | 1      | 1    | 1      | 1      |
+| 0   | 1    | 0      | 0    | 0      | 1      |
+| 0   | 1    | 0      | 0    | 1      | 1      |
+| 0   | 1    | 0      | 1    | 0      | 1      |
+| 0   | 1    | 0      | 1    | 1      | 1      |
+| 0   | 1    | 1      | 0    | 0      | 1      |
+| 0   | 1    | 1      | 0    | 1      | 1      |
+| 0   | 1    | 1      | 1    | 0      | 1      |
+| 0   | 1    | 1      | 1    | 1      | 1      |
+| 1   | 0    | 0      | 0    | 0      | 1      |
+| 1   | 0    | 0      | 0    | 1      | 1      |
+| 1   | 0    | 0      | 1    | 0      | 0      |
+| 1   | 0    | 0      | 1    | 1      | 1      |
+| 1   | 0    | 1      | 0    | 0      | 1      |
+| 1   | 0    | 1      | 0    | 1      | 1      |
+| 1   | 0    | 1      | 1    | 0      | 0      |
+| 1   | 0    | 1      | 1    | 1      | 1      |
+| 1   | 1    | 0      | 0    | 0      | 0      |
+| 1   | 1    | 0      | 0    | 1      | 0      |
+| 1   | 1    | 0      | 1    | 0      | 0      |
+| 1   | 1    | 0      | 1    | 1      | 0      |
+| 1   | 1    | 1      | 0    | 0      | 1      |
+| 1   | 1    | 1      | 0    | 1      | 1      |
+| 1   | 1    | 1      | 1    | 0      | 0      |
+| 1   | 1    | 1      | 1    | 1      | 1      |
+
+Let me know if you'd like this saved as a CSV or Excel file, or visualized as a logic diagram!
