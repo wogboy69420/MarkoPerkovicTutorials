@@ -117,3 +117,89 @@ Here is the complete **truth table** for your seatbelt alarm logic circuit:
 | 1   | 1    | 1      | 1    | 1      | 1      |
 
 Let me know if you'd like this saved as a CSV or Excel file, or visualized as a logic diagram!
+
+
+
+
+
+
+
+
+
+MARKO: now write me the python script that will go through the entire data table and give me the ones that will activate the car alarm
+
+basically copilot wrote me a script that will go through all the possible inputs and then print the ones that would activate the alarm:
+
+
+from itertools import product
+
+def seatbelt_alarm(ign, driv, beltd, passg, beltp):
+    # Alarm logic: activate (0) if ignition is on and either seat is occupied and unbelted
+    return 0 if ign and ((driv and not beltd) or (passg and not beltp)) else 1
+
+# Generate all possible combinations of 5 binary inputs
+inputs = ['IGN', 'DRIV', 'BELTD', 'PASS', 'BELTP']
+combinations = list(product([0, 1], repeat=5))
+
+# Print header
+print(f"{'Case':<5} {'IGN':<4} {'DRIV':<5} {'BELTD':<6} {'PASS':<5} {'BELTP':<6} {'ALARM':<6} {'Triggers Alarm?'}")
+
+# Loop through combinations and evaluate alarm
+for i, combo in enumerate(combinations, start=1):
+    ign, driv, beltd, passg, beltp = combo
+    alarm = seatbelt_alarm(ign, driv, beltd, passg, beltp)
+    trigger = "✅ Yes" if alarm == 0 else "No"
+    print(f"{i:<5} {ign:<4} {driv:<5} {beltd:<6} {passg:<5} {beltp:<6} {alarm:<6} {trigger}")
+
+
+
+
+
+
+
+
+
+
+this is its output:
+
+
+Case  IGN  DRIV  BELTD  PASS  BELTP  ALARM  Triggers Alarm?
+1     0    0     0      0     0      1      No
+2     0    0     0      0     1      1      No
+3     0    0     0      1     0      1      No
+4     0    0     0      1     1      1      No
+5     0    0     1      0     0      1      No
+6     0    0     1      0     1      1      No
+7     0    0     1      1     0      1      No
+8     0    0     1      1     1      1      No
+9     0    1     0      0     0      1      No
+10    0    1     0      0     1      1      No
+11    0    1     0      1     0      1      No
+12    0    1     0      1     1      1      No
+13    0    1     1      0     0      1      No
+14    0    1     1      0     1      1      No
+15    0    1     1      1     0      1      No
+16    0    1     1      1     1      1      No
+17    1    0     0      0     0      1      No
+18    1    0     0      0     1      1      No
+19    1    0     0      1     0      0      ✅ Yes
+20    1    0     0      1     1      1      No
+21    1    0     1      0     0      1      No
+22    1    0     1      0     1      1      No
+23    1    0     1      1     0      0      ✅ Yes
+24    1    0     1      1     1      1      No
+25    1    1     0      0     0      0      ✅ Yes
+26    1    1     0      0     1      0      ✅ Yes
+27    1    1     0      1     0      0      ✅ Yes
+28    1    1     0      1     1      0      ✅ Yes
+29    1    1     1      0     0      1      No
+30    1    1     1      0     1      1      No
+31    1    1     1      1     0      0      ✅ Yes
+32    1    1     1      1     1      1      No
+
+
+
+
+current as at: 13 August 2025
+
+MARKO PEROKVIC 3297798
