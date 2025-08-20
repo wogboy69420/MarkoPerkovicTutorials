@@ -7,3 +7,5 @@ w Elane
 
 Marko Perkovic
 3297798
+
+the stuff for assignment 1 will be in the other repo, thank you for your patience :)
