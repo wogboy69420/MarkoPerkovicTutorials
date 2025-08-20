@@ -1,3 +1,9 @@
-# assignment1flowchart
+# TUTORIAL REPOSITORY
 
-This folder contains the flowchart for assignment 1.
+
+This repo contains the stuff done in tutorials for
+intro to it 4478 
+w Elane
+
+Marko Perkovic
+3297798
