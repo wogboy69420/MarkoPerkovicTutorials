@@ -1,0 +1,96 @@
+## week 4 tutorial current as at 1214hrs, 20 / 08 / 2025 
+
+#3297798
+
+print('Welcome to the Python Coffee Shop!')
+
+customer_name = input('What is your name? ')
+print('Hello, ' + customer_name + '! Let\'s order some coffee.')
+
+price_coffee = 3.50
+price_latte = 4.00
+price_mocha = 5.00
+price_hotchocolate = 6.00
+
+print('Coffee: $' + str(price_coffee))
+print('Latte: $' + str(price_latte))
+print('Mocha: $' + str(price_mocha))
+print('Hot chocolcate: $' + str(price_hotchocolate))
+
+choice = input('What would you like to order? (coffee/latte/mocha/hot chocolate): ').lower()
+
+if choice == 'coffee':
+    cost = price_coffee
+elif choice == 'latte':
+    cost = price_latte
+elif choice == 'mocha':
+    cost = price_mocha
+elif choice == 'hot chocolate':
+    cost = price_hotchocolate
+else:
+    print('Sorry, we do not have that.')
+    cost = 0
+
+discount = input("are you a student y/n:")
+if discount == 'y':
+  cost * 0.9
+
+quantity = int(input('How many cups would you like? '))
+
+total_cost = cost * quantity
+
+if quantity > 1:
+    print('You get a discount of $1.00!')
+    total_cost -= 1.00
+
+
+print('Your total is: $' + str(total_cost))
+print('Thank you, ' + customer_name + '! Please come again.')
+
+
+
+
+
+
+
+taxable_income = float(input("enter your taxable income: "))
+
+if taxable_income <= 20000:
+    tax = .02 * taxable_income
+else:
+    if taxable_income <= 50000:
+        tax = (400 + .025 * (taxable_income - 20000))
+    else:
+        tax = (1150 + .035 * (taxable_income - 50000))
+
+print(f"your tax is: ${tax:,.2f}")
+
+
+
+
+
+
+
+taxable_income = float(input("enter your taxable income: "))
+
+if taxable_income <= 20000:
+    tax = 0.02 * taxable_income
+elif taxable_income <= 50000:
+    tax = (400 + 0.025 * (taxable_income - 20000))
+else:
+    tax = (1150 + 0.035 * (taxable_income - 50000))
+
+print(f"your tax is: ${tax:,.2f}")
+
+
+
+
+
+
+a = 1
+b = 1.5
+print(3 * a == 2 * b)
+print((a < b) or (b < a))
+print(not (a < b) or not (a < (b - a)))
+print(((a == b) or not (b < a)) and ((a < b) or (b == a + 1)))
+
