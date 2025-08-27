@@ -1,0 +1,265 @@
+# tutorial w elane 10:30 27 Aug 2025
+
+3297798
+
+Marko Perkovic
+
+movies = {
+    "Dune": 12.5,
+    "Barbie": 11.0,
+    "Oppenheimer": 13.0,
+    "Spirited Away": 10.0
+}
+
+purchases = [] #list of (title, qty, price_each)
+
+
+while movie_title or movie_quantity != 'done':
+    movie_title = input("what movie do you want")
+    movie_quantity = input("enter how many of that movie you want")
+    if movie_title not in movies:
+        print("sorry, that movie doesn't exist")
+        print(movies)
+
+
+
+
+
+
+
+
+num = 5
+while True:
+    num = 2 * num
+    if num % 4 == 0:
+    	break
+print(num)
+
+
+num = 3
+while num < 15:
+	num += 5
+print(num)
+
+
+oceans = ["Atlantic", "Pacific", "Indian", "Arctic", "Antarctic"]
+i = len(oceans) - 1
+while i >= 0:
+    if len(oceans[i]) < 7:
+    	del oceans[i]
+    i=i-1
+print(", ".join(oceans))
+
+
+
+
+
+
+num = 5
+for i in range(num, 2*num - 2):
+	print(i)
+
+for countdown in range(10, 0, -1):
+    print(countdown)
+
+
+
+
+
+
+
+
+numEvens = 0
+sumOfEvens = 0
+list1 = [2, 9, 6, 7, 12]
+for num in list1:
+    if num % 2 == 0:
+	    numEvens += 1
+	    sumOfEvens += num
+print(numEvens, sumOfEvens)
+
+
+
+
+numOfNumbers = 0
+list1 = ["three", 4, 5.7, "six", "seven", 8, 3.1416]
+for item in list1:
+    if isinstance(item, str):
+        continue
+    numOfNumbers +=1
+print(numOfNumbers)
+
+
+
+
+
+
+
+num = 1
+while num <= 9:
+    print(num)
+    num += 2
+
+
+
+num2 = 1
+for num2 in range(1, 10, 2):
+    print(num2)
+
+
+i = 1
+for i in range(1, 10, 2):
+    print(i)
+
+
+
+
+
+
+
+total = 0
+count = 0
+while count < 3:
+    total = total + int(input("Enter a number: "))
+    count = count + 1
+print(total)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L = ["sentence", "contains", "five", "words."]
+L.insert(0, "This")
+print(" ".join(L))
+
+del L[3]
+L.insert(3, "six")
+L.insert(4, "different")
+print(" ".join(L))
+
+
+# Assume the name entered is: Damith Hearth
+name = input("Enter name with two parts: ")
+L = name.split()
+print("{0:s}, {1:s}".format(L[1], L[0]))
+
+
+
+nums = [6, 2, 8, 1]
+print("Largest Number:", max(nums))
+print("Length:", len(nums))
+print("Total:", sum(nums))
+
+tuple1 = ("course", "of", "human", "events", "When", "in", "the")
+tuple2 = tuple1[4:] + tuple1[:4]
+print(" ".join(tuple2))
+
+
+
+
+
+
+
+# Four virtues presented by Plato
+virtues = ("wisdom", "courage", "temperance", "justice")
+print(virtues[3])
+
+
+
+
+list1 = [1, "two", "three", 4]
+print(" ".join(list1))
+#integers and strings. join can only do strings
+
+
+
+
+## Display the numbers from 1 through 5.
+num = 0
+while True
+    num = 1
+    print(num)
+    num += 1
+
+
+# Display the numbers from 1 through 5.
+num = 1
+while num <= 5:
+    print(num)
+    num += 1
+
+# no dots
+
+#intine loop has no exit condiiton
+
+
+
+
+
+
+
+
+celsius = 10
+print("Celcius\t\t\tFahrenheit")
+while celsius < 30:
+    fahrenheit = (int(9/5 * celsius) + 32)
+    celsius += 5
+
+    print(f'{celsius}\t\t\t\t{fahrenheit}')
+
+
+
+
+
+
+celsius = 5
+print("Celcius\t\t\tFahrenheit")
+while celsius < 30:
+    celsius += 5
+    fahrenheit = (int(9 / 5 * celsius) + 32)
+    print(f'{celsius}\t\t\t\t{fahrenheit}')
+
+
+
+
+celsius = 5
+print("Celcius\t\t\tFahrenheit")
+while celsius < 30:
+    celsius += 5
+    fahrenheit = (int(9 / 5 * celsius) + 32)
+    print(f'{celsius}\t\t\t\t{fahrenheit}')
+
+
+
+
+celsius = 5
+print("Celcius\t\t\tFahrenheit")
+while celsius < 30:
+    celsius += 5
+    fahrenheit = (int(9 / 5 * celsius) + 32)
+    print(f'{celsius}\t\t\t\t{fahrenheit}')
+
+
+
+
+
+
+
+
+
+words = input("Enter a phrase: ").capitalize()
+for ch in words:
+    vowels = 0
+    if ch in "AEOUI":
+        vowels += 1
+    print(vowels)
+
