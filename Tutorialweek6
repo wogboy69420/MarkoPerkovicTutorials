@@ -1,0 +1,387 @@
+tutorial week 6 
+
+current as at 1830 hrs, 03 september 2025
+
+3297798 Marko perokvic
+
+
+
+import tkinter as tk
+
+def say_hello():
+    print("Hello from the button!")
+
+root = tk.Tk()
+root.title("Callbacks")
+
+btn = tk.Button(root, text="Click me", command=say_hello)
+btn.pack(pady=10)
+
+root.mainloop()
+
+
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Grid Example")
+
+tk.Label(root, text="Row 0, Col 0").grid(row=10, column=10, padx=10, pady=10)
+tk.Label(root, text="Row 0, Col 1").grid(row=10, column=10, padx=6, pady=6)
+
+tk.Button(root, text="A").grid(row=10, column=10, sticky="ew", padx=6, pady=6)
+tk.Button(root, text="B").grid(row=10, column=10, sticky="ew", padx=6, pady=6)
+
+root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=1)
+
+root.mainloop()
+
+
+
+import tkinter as tk
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5/9
+
+def convert():
+    try:
+        f = float(entry_f.get())
+        c = fahrenheit_to_celsius(f)
+        result_var.set(f"{c:.2f} °C")
+        status_var.set("Converted successfully.")
+    except ValueError:
+        result_var.set("")
+        status_var.set("Please enter a valid number.")
+
+root = tk.Tk()
+root.title("Temperature Converter")
+root.geometry("360x160")
+
+tk.Label(root, text="Fahrenheit:").grid(row=0, column=0, padx=8, pady=8, sticky="e")
+entry_f = tk.Entry(root, width=12)
+entry_f.grid(row=0, column=1, padx=8, pady=8, sticky="w")
+
+tk.Button(root, text="Convert", command=convert).grid(row=0, column=2, padx=8, pady=8)
+
+tk.Label(root, text="Celsius:").grid(row=1, column=0, padx=8, pady=8, sticky="e")
+result_var = tk.StringVar(value="")
+tk.Label(root, textvariable=result_var).grid(row=1, column=1, padx=8, pady=8, sticky="w")
+
+status_var = tk.StringVar(value="")
+tk.Label(root, textvariable=status_var, fg="green").grid(row=2, column=0, columnspan=3, pady=6)
+
+root.columnconfigure(1, weight=1)
+root.mainloop()
+
+
+
+
+
+if __name__ == '__main__':
+    main()
+
+
+
+# This program displays a simple line graph.
+import matplotlib.pyplot as plt
+
+def main():
+# Create lists with the X,Y coordinates of each data point.
+    x_coords = [0, 1, 2, 3, 4]
+    y_coords = [0, 3, 1, 5, 2]
+
+ # Build the line graph.
+    plt.plot(x_coords, y_coords, marker='o')
+
+ # Add a title.
+    plt.title('Sales by Year')
+
+ # Add labels to the axes.
+    plt.xlabel('Year')
+    plt.ylabel('Sales')
+
+
+    plt.show()
+
+main()
+
+
+
+
+
+def greet(name):
+    ## what the program does ##
+    message = "Hello, " + name
+    return message
+
+print(greet("Ava"))  # Hello, Ava
+
+print(greet("Marko"))
+print(greet("Jackson"))
+
+
+
+
+
+
+def add(a, b):
+    return a + b
+
+print(add(2, 3))  # 5
+
+
+
+
+def add(a, b):
+    mySum = a + b
+    return mySum
+
+print(add(2, 3))  # 5
+
+print(add(2, 32))
+
+
+print(mySum) # error. mysum is a local variable. the
+
+
+
+
+
+def power(base, exp=2):
+    return base ** exp
+
+print(power(5))        # 25
+print(power(5, exp=3)) # 125
+print(power(4))        # 25
+
+# modules 3 and 4 for the quiz...
+
+
+
+
+
+
+def full_name(first, last):
+    return last, first
+
+print(full_name("marko", "perkovic"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def full_name(first, last):
+    return last + ', ' + first
+
+print(full_name("marko", "perkovic"))
+
+
+
+
+
+# --- Student Starter ---
+# Save as drone_helper.py and run in IDLE/terminal
+
+def is_voltage_safe(v):
+    """Return True if voltage is in the safe range [3.5, 4.2]."""
+    return 3.5 <= v <= 4.2
+
+
+def estimate_minutes(v):
+    """Estimate remaining minutes (linear from 3.5V=0 to 4.2V=10)."""
+    if v < 3.5:
+        return 0
+    if v > 4.2:
+        v = 4.2
+    minutes = (v - 3.5) * (10 / 0.7)
+    return round(minutes, 1)
+
+
+def format_status(v):
+    """Return a friendly string with safety + minutes."""
+    safe = is_voltage_safe(v)
+    mins = estimate_minutes(v)
+    if not safe:
+        return f"Voltage {v}V is UNSAFE. Land now. Est. {mins} min."
+    else:
+        return f"Voltage {v}V is safe. Est. {mins} min remaining."
+
+
+# --- Simple I/O ---
+reading_str = input("Enter voltage reading (e.g., 3.9): ")
+voltage = float(reading_str)
+print(format_status(voltage))
+
+
+
+
+
+import tkinter as tk
+
+root = tk.Tk()                 # Create the main window
+root.title("My First GUI")     # Window title
+root.geometry("320x200")       # Optional: width x height
+root.mainloop()                # Start the event loop
+
+
+
+
+
+def say_hello():
+    """this functions prints hello"""
+    print("Hello")
+    return None
+
+say_hello()
+
+
+
+
+
+
+
+
+
+
+#The finance charge is 1.5% of the old balance. If the new balance is $20 or less,
+# the minimum payment should be the entire new balance. Otherwise,
+# the minimum payment should be $20 plus 10% of the amount of the
+# new balance above $20. The main function should call three functions—one (multi-valued)
+# for input, one (multi-valued) to calculate the new balance and minimum payment, and one for output.
+
+# main()
+
+
+# old balance
+# charges for the month
+# and credits
+
+def old_balance():
+    o_balance = float(input("enter old balance: "))
+    charges_for_month = float(input("enter charges for month: "))
+    credits_for_month = float(input("enter credits for month: "))
+    return o_balance, charges_for_month, credits_for_month
+
+old_balance()
+#
+
+def process():
+    new_balance = old_balance()
+    minimum_payment = ...
+
+
+# output()
+
+
+
+
+
+# A number is prime if its only factors are 1 and itself.
+# Write a program that determines whether a number is prime by using the theorem
+# "The number n is a prime number if and only if n divides (n - 1)! + 1.
+# The program should define a Boolean-valued function named isPrime that calls a function named factorial.
+
+def main():
+    factorial(4)
+    isPrime()
+
+def factorial(n):
+    return (n / ((n - 1)) + 1)
+
+
+def isPrime(factorial): # true or false
+    if factorial == True:
+        print("its a factorial")
+    else:
+        print("not a factorial")
+
+
+
+main()
+
+
+
+
+
+
+
+
+# Write a program that displays the names of the planets (see list below)
+# in the list Planets in descending order by surface area.
+
+Planets = [
+    ('Mercury', 75, 1), ('Venus', 460, 2), ('Mars', 140, 4),
+    ('Earth', 510, 3), ('Jupiter', 62000, 5), ('Neptune', 7640, 8),
+    ('Saturn', 42700, 6 ), ('Uranus',8100, 7)
+]
+
+# sorted_planets = Planets[0:][0:][0:]
+Planets.sort(reverse=True)
+print(Planets[:])
+
+print("sorted by surface area in descending order: ")
+print(Planets.sort())
+
+
+
+
+
+
+
+
+
+def main():
+
+    ne = [
+
+        ("maine", 0000, 69420), ("new jersey", 1000, 50000), ("new york state", 2000, 20000000),
+        ("NSW", 2600, 300000), ("QLD", 3000, 5000000)
+
+
+          ]
+    ne.sort(key=sortByPopulation, reverse=True)
+    print("sorted by population in descending order")
+    for state in ne:
+        print(state[0], " ", end="")
+
+def sortByPopulation(state):
+    return state[2]
+
+
+main()
+
+
+
+
+
+
+def main():
+
+
+    Planets = [
+               ('Mercury', 75, 1), ('Venus', 460, 2),
+               ('Mars', 140, 4), ('Earth', 510, 3), ('Jupiter', 62000, 5),
+               ('Neptune', 7640, 8), ('Saturn', 42700, 6), ('Uranus', 8100, 7)
+               ]
+
+    Planets.sort(key=sortByArea, reverse=True)
+    print("sorted by population in descending order")
+    for planet in Planets:
+        print(planet[0], " ", end="")
+
+
+def sortByArea(state):
+    return state[1]
+
+
+main()
+
