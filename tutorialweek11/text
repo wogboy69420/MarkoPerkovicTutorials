@@ -1,1 +1,245 @@
+## the below code comes from canvas, which was ripped off somoene else:
+try:
+    n = int(input("Enter a nonzero integer: "))
+    reciprocal = 1 / n
+    print("The reciprocal of {0} is {1:,.3f}".format(n, reciprocal))
+
+# this is mine
+except AttributeError:
+    print("An unavaiable functionality is requested for an object.")
+
+except FileNotFoundError:
+    print("Requested file does not exist or is not located where expected")
+
+except ImportError:
+    print("Import statement fails to find requested module")
+
+except IndexError:
+    print("Index out of range")
+
+except KeyError:
+    print("No such key in dictionary")
+
+except NameError:
+    print("The value of a variable cannot be found")
+
+except TypeError:
+    print("Function or operator recieves right type of argument, but innappropriate value")
+
+
+except ValueError as myVariable:  # wrong data type? int('a') gives ValueError
+    print(myVariable,". Please, try again")
+except ZeroDivisionError:
+    print("You entered zero.")
+except IndexError:
+    print("Index error.")
+#input some more ranodm exceptions (check canvas dr romeros)
+except Exception as e:
+    print(f"Error {e}")
+
+# start from testing
+
+# we can get multiple inputs but only one output
+
+
+# below is my own code
+age = int(input("Enter your age: "))
+if 18 >= age >= 40:
+    print("Cannot join ADF. age must be between 18 and 40 inclusive")
+    enlistment = False
+else:
+    print("welcome to the ADF")
+    enlistment = True
+print(f"Enlishtment = {enlistment}")
+
+# done is better then perfect
+
+# nignog
+
+# by dr romero:
+
+# Opening a File for Writing.
+# Creates a file if it does not exist,
+# Overwrites the file if it exists.
+temp_file = open("temp.txt","w")  # use open to open a file, put it in a variable
+                #filename, mode ^^
+print("First Line", file = temp_file) # puts the "first line" in temp_file
+print("Second Line", file = temp_file) # puts "second line" in file called temp_file (temp_file is temp.txt)
+temp_file.close()  # files must always be closed, otherwise you fuck yourself
+
+
+# build your own text thing? build youre version of notepad/google docs
+
+
+
+
+################
+
+
+
+
+
+
+def main(): # crete two files containing the first 3 countries
+    outfile = open("countries1.txt", 'w') # creates new file if it doesnt exist
+    createWithWriteLines(outfile)
+    outfile = open("countries2.txt", 'w')
+    createWithWrite(outfile)
+
+def createWithWriteLines(outfile):
+    list1 = ["Austalia", "Canada", "New Zealand"]
+    #append endline characters to the list's items.
+    for i in range(len(list1)):
+        list1[i] = list1[i] + "\n" # write lists items to the file
+    outfile.writelines(list1) # write lines is build in function in python
+    outfile.close() # a append just adds thing to bottom of file
+
+def createWithWrite(outfile):
+    outfile.write("Australia\n")
+    outfile.write("Canada\n")
+    outfile.write("New Zealand\n")
+    outfile.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Opening a File for Writing.
+# Creates a file if it does not exist,
+# Overwrites the file if it exists.
+temp_file = open("temp.txt","w")  # use open to open a file, put it in a variable
+                #filename, mode ^^
+print("First Line", file = temp_file) # puts the "first line" in temp_file
+print("Second Line", file = temp_file) # puts "second line" in file called temp_file (temp_file is temp.txt)
+temp_file.close()  # files must always be closed, otherwise you fuck yourself
+
+
+
+
+#from lecture week 11 7 october, from dr romero who got it from someone else (probs intro to puthon)
+
+
+
+
+
+
+while True:
+    n = int(input("Enter a nonzero integer: "))
+    if n == 0:
+        print("you entered zero.")
+        break
+    reciprocal = 1 / n
+    print("The reciprocal of {0} is {1:,.3f}".format(n, reciprocal))
+    break
+
+try:
+    n = int(input("Enter a nonzero integer: ")
+    reciprocal = 1 / n
+    print("The reciprocal of {0} is {1:,.3f}".format(n, reciprocal))
+except ValueError as myVariable:
+    print(myVariable,". Please, try again")
+
+
+
+
+
+f = open("abc.txt", "R")
+
+x = list(range(1,9 "1"))[8]
+
+x = '2'
+
+x.append(2)
+
+set does not support indexing
+
+evaluate function?
+
+eval converts string to integer
+
+#
+
+
+try:
+    num = float(input("Enter a number: "))
+    print("yoru number is", num)
+except:
+    print(" you must enter a number")
+
+nafta = ["Canada", "US", "Mexico"]
+try:
+    print("the third member of nafta is", nafta[3])
+# except:
+#     print("error occured")
+
+flower = "Bougainvillea"
+try:
+    lastLetter = flower[13]
+    print(lastLetter)
+except TypeError:
+    print("Error occured. ")
+except IndexError as exc:
+    print(exc)
+    print("oops")
+# ValueError = the value is wrong and or fucked up
+try:
+    infile = open("Ages.txt", 'r')
+    age = int(infile.readline())
+    print("Age:", age)
+
+except ValueError:
+    print("File Ages.txt contains an invalid age. ")
+    infile.close()
+except FileNotFoundError:
+    print("File Ages.txt not found")
+# else:
+#     infile.close()
+
+###### all input from a file is treated as a string. the number 20000 in file salaries.txt is treated as a string when imported
+
+
+
+# finally = will execute something regardless.
+
+
+
+while True:
+    n = int(input("Enter a nonzero integer: "))
+    if n != 0:
+        reciprocal = 1 / n
+        print("The reciprocal of {0} is {1:,.3f}".format(n, reciprocal))
+        break
+    else:
+        print("You entered zero. Try again.")
+
+
+while True:
+    try:
+        n = int(input("Enter a nonzero integer: "))
+        reciprocal = 1 / n
+        print("The reciprocal of {0} is {1:,.3f}".format(n, reciprocal))
+        print("Thanks for using the program!")
+        break
+        var = system.exit
+    except ZeroDivisionError:
+        print("You entered zero. Try again.")
+    except ValueError:
+        print("You did enter a nonzero integer. Try again.")
+    except Exception as e:
+        print("Error occured: {0}".format(e))
+    # finally:
+    #     print("Thanks for using the program!")
+
+# value error just means its the wrong error
+
+
+# review the SQL stuff
 
